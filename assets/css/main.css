@@ -1,0 +1,257 @@
+
+/* Copyright 2022 @MennoEngels */
+
+/*----------------------------------------------------------------------*\
+                               #VARIABLES
+\*----------------------------------------------------------------------*/
+
+:root {
+
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --black: hsl(240, 2%, 12%);
+    --smoky-black: hsl(0, 0%, 7%);
+    --default-text-color: hsl(0, 0%, 98%);
+    --electric-crimson: hsl(353, 86%, 54%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray-70: hsla(0, 0%, 84%, 0.7);
+
+    --ff-poppins: 'Poppins', sans-serif;
+
+    /* font-size */
+    --fs-1: 24px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease-in-out;
+}
+
+/*----------------------------------------------------------------------*\
+                               #RESET STYLES
+\*----------------------------------------------------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+    display: block;
+}
+
+button {
+    font: inherit;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    background: none;
+    font: inherit;
+}
+
+::selection {
+    background: var(--electric-crimson);
+    color: var(--smoky-black);
+}
+
+:focus {
+    outline-color: var(--electric-crimson);
+}
+
+html {
+    font-family: var(--ff-poppins);
+}
+
+body {
+    background: var(--smoky-black);
+}
+
+/*----------------------------------------------------------------------*\
+                             #GLOBAL STYLES
+\*----------------------------------------------------------------------*/
+
+article {
+    background: var(--black);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+}
+
+article.active {
+    animation: fade 0.5s ease backwards;
+    margin-bottom: 60px;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--default-text-color);
+    text-transform: capitalize;
+}
+
+.h1 {
+    text-align: center;
+}
+
+.introduction.active {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 99vh;
+}
+
+.intro {
+    font-size: 60px;
+}
+
+.intro-sub {
+    font-size: 30px;
+}
+
+.h2 {
+    font-size: var(--fs-1);
+}
+
+.h3 {
+    font-size: var(--fs-2);
+}
+
+.h4 {
+    font-size: var(--fs-4);
+}
+
+.h5 {
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+}
+
+.article-title {
+    position: relative;
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+}
+
+.article-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--text-gradient-red);
+    border-radius: 3px;
+}
+
+/*----------------------------------------------------------------------*\
+                               #NAVBAR
+\*----------------------------------------------------------------------*/
+
+.logo {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo a {
+    color: var(--electric-crimson);
+    font-weight: var(--fw-500);
+    font-size: 17px;
+    padding: 18.5px 0px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-2);
+    z-index: 5;
+}
+
+.navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-link {
+    color: var(--light-gray);
+    font-size: var(--fs-8);
+    padding: 20px 7px;
+    transition: color var(--transition-1);
+    padding-right: 0px;
+    padding-left: 14px;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+    color: var(--light-gray-70);
+}
+
+.navbar-link.active {
+    color: var(--electric-crimson);
+}
+
+.intro-name {
+    display: inline-block;
+    color: var(--electric-crimson);
+}
