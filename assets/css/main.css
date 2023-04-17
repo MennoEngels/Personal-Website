@@ -7,6 +7,8 @@
 
 :root {
 
+    /* solid */
+
     --jet: hsl(0, 0%, 22%);
     --onyx: hsl(240, 1%, 17%);
     --black: hsl(240, 2%, 12%);
@@ -15,6 +17,27 @@
     --electric-crimson: hsl(353, 86%, 54%);
     --light-gray: hsl(0, 0%, 84%);
     --light-gray-70: hsla(0, 0%, 84%, 0.7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+
+    /* gradient */
+
+    --bg-gradient-jet: linear-gradient(to bottom right,
+            hsla(240, 1%, 18%, 0.251) 0%,
+            hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+    --bg-gradient-red-1: linear-gradient(to bottom right,
+            hsl(353, 86%, 54%) 0%,
+            hsla(36, 100%, 69%, 0) 50%);
+    --bg-gradient-red-2: linear-gradient(135deg,
+            hsla(353, 86%, 54%, 0.251) 0%,
+            hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+    --border-gradient-onyx: linear-gradient(to bottom right,
+            hsl(0, 0%, 25%) 0%,
+            hsla(0, 0%, 25%, 0) 50%);
+    --text-gradient-red: linear-gradient(to right,
+            hsl(353, 86%, 54%),
+            hsl(343, 86%, 50%));
+
+    /* font-family */
 
     --ff-poppins: 'Poppins', sans-serif;
 
@@ -28,10 +51,22 @@
     --fs-7: 13px;
     --fs-8: 11px;
 
+    /* font-weight */
+
     --fw-300: 300;
     --fw-400: 400;
     --fw-500: 500;
     --fw-600: 600;
+
+    /* shadow */
+
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+    --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+    --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+
+    /* transition */
 
     --transition-1: 0.25s ease;
     --transition-2: 0.5s ease-in-out;
@@ -102,14 +137,6 @@ body {
 /*----------------------------------------------------------------------*\
                              #GLOBAL STYLES
 \*----------------------------------------------------------------------*/
-
-.main-content {
-    min-width: 50%;
-    width: 50%;
-    margin: 0;
-    position: relative;
-    margin: auto;
-}
 
 article {
     background: var(--black);
@@ -233,20 +260,18 @@ main {
 \*----------------------------------------------------------------------*/
 
 .logo {
-    position: absolute;
+    position: fixed;
     bottom: auto;
     top: 0;
-    left: 0;
     display: flex;
     align-items: center;
-
+    z-index: 6;
 }
 
 .logo a {
     color: var(--electric-crimson);
-    font-weight: var(--fw-500);
-    font-size: 17px;
-    padding: 18.5px 0px;
+    font-size: var(--fs-8);
+    padding: 20px 0px;
 }
 
 .navbar {
@@ -254,7 +279,7 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
+    background-color: var(--smoky-black);
     box-shadow: var(--shadow-2);
     z-index: 5;
 }
@@ -590,4 +615,186 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:disabled:hover::before {
     background: var(--bg-gradient-jet);
+}
+
+/*----------------------------------------------------------------------*\
+                               #RESPONSIVE
+\*----------------------------------------------------------------------*/
+
+/* responsive larger than 450px screen */
+
+@media (min-width: 450px) {
+
+    /* #PORTFOLIO */
+
+    .project-img {
+        height: auto;
+    }
+}
+
+/* responsive larger than 580px screen */
+
+@media (min-width: 580px) {
+
+    :root {
+
+        /* #font-size */
+	   
+        --fs-1: 32px;
+        --fs-2: 24px;
+        --fs-3: 26px;
+        --fs-4: 18px;
+        --fs-6: 15px;
+        --fs-7: 15px;
+        --fs-8: 12px;
+    }
+
+    .article-title {
+        font-weight: var(--fw-600);
+        padding-bottom: 15px;
+    }
+
+    .article-title::after {
+        width: 40px;
+        height: 5px;
+    }
+
+    /* #main */
+
+    main {
+        margin-bottom: 100px;
+    }
+
+    /* #navbar */
+
+    .navbar-list {
+        gap: 20px;
+    }
+
+    .navbar-link, .logo a {
+        --fs-8: 14px;
+    }
+
+    /* #about */
+
+    .about .article-title {
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        margin-bottom: 40px;
+    }
+
+    /* #service */
+
+    .service-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 30px;
+    }
+
+    .service-icon-box {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .service-content-box {
+        text-align: left;
+    }
+
+    /* #portfolio */
+
+    .project-img {
+        border-radius: 16px;
+    }
+
+    /* #contact */
+
+    .input-wrapper {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .form-input {
+        padding: 15px 20px;
+    }
+
+    textarea.form-input {
+        margin-bottom: 30px;
+    }
+
+    .form-btn {
+        --fs-6: 16px;
+        padding: 16px 20px;
+    }
+
+    .form-btn ion-icon {
+        font-size: 18px;
+    }
+}
+
+/* responsive larger than 768px screen */
+
+@media (min-width: 768px) {
+
+    .has-scrollbar::-webkit-scrollbar-button {
+        width: 100px;
+    }
+
+    /* #navbar */
+
+    .navbar-link, .logo a {
+        --fs-8: 15px;
+    }
+
+    /* #portfolio */
+
+    .article-title {
+        padding-bottom: 20px;
+    }
+
+    .filter-select-box {
+        display: none;
+    }
+
+    .filter-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+        padding-left: 5px;
+        margin-bottom: 30px;
+    }
+
+    .filter-item button {
+        color: var(--light-gray);
+        font-size: var(--fs-5);
+        transition: var(--transition-1);
+    }
+
+    .filter-item button:hover {
+        color: var(--light-gray-70);
+    }
+
+    .filter-item button.active {
+        color: var(--electric-crimson);
+    }
+
+    .project-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* #contact */
+
+    .input-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-btn {
+        width: max-content;
+        margin-left: auto;
+    }
+
 }
