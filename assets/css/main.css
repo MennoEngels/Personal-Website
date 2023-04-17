@@ -798,3 +798,129 @@ textarea.form-input::-webkit-resizer {
     }
 
 }
+
+/* responsive larger than 1024px screen */
+
+@media (min-width: 1024px) {
+
+    /* VARIABLES */
+
+    :root {
+
+        /* shadow */
+
+        --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+        --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+        --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    }
+
+    article {
+        width: 950px;
+        box-shadow: var(--shadow-5);
+    }
+
+    /* #main  */
+
+    main {
+        margin-bottom: 60px;
+    }
+
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+
+    /* #navbar */
+
+    .navbar {
+        position: absolute;
+        bottom: auto;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: max-content;
+        box-shadow: none;
+    }
+
+    .logo {
+        position: absolute;
+    }
+
+    .navbar-list {
+        gap: 30px;
+    }
+
+    .navbar-link, .logo a {
+        font-weight: var(--fw-500);
+    }
+
+    /* #service */
+
+    .service-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 25px;
+    }
+
+    /* #clients */
+
+    .clients-item {
+        min-width: calc(25% - 38px);
+    }
+
+    /* PORTFOLIO */
+
+    .project-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* responsive larger than 1250px screen */
+
+@media (min-width: 1250px) {
+
+    body::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: var(--smoky-black);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border: 5px solid var(--smoky-black);
+        background: hsla(0, 0%, 100%, 0.1);
+        border-radius: 20px;
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+            inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: hsla(0, 0%, 100%, 0.15);
+    }
+
+    body::-webkit-scrollbar-button {
+        height: 60px;
+    }
+
+    article {
+        width: auto;
+    }
+
+    /* #MAIN */
+
+    main {
+        max-width: 1500px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .main-content {
+        min-width: 75%;
+        width: 75%;
+        margin: 0;
+    }
+}
