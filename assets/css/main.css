@@ -505,10 +505,45 @@ main {
     font-size: var(--fs-6);
     font-weight: var(--fw-300);
     line-height: 1.6;
+    max-width: 100%;
 }
 
 .about-text p {
     margin-bottom: 15px;
+}
+
+.about-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.about-wrapper img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.skill-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.skill-tree ul li {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+    list-style-type: disc;
+    margin-left: 18px;
+}
+
+.skill-title {
+    margin-bottom: 20px;
+}
+
+.skill-tree-title {
+    margin-bottom: 5px;
 }
 
 /*----------------------------------------------------------------------*\
